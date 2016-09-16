@@ -9,3 +9,6 @@ parserArgumentsC=-ferror-limit=100 -fspell-checking -Wdocumentation -Wunused-par
 
 [CustomDefinesAndIncludes][ProjectPath0][Compiler]
 Name=GCC
+
+[Project]
+VersionControlSupport=kdevgit
