@@ -2,7 +2,7 @@
 
 	"manifest_version": 2,
 	"name": "Invert Image",
-	"version": "1.0",
+	"version": "1.1",
 
 	"description": "The addon inverts color of an image to black for night reading",
 	"homepage_url": "https://github.com/vycb/InvertImage",

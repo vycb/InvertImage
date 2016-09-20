@@ -1,6 +1,6 @@
 chrome.contextMenus.create({
 	id: "invetimage",
-	title: "InvetImage",
+	title: "Invet Image",
 	contexts: ["all"]
 })
 
