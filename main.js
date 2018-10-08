@@ -45,7 +45,7 @@ browser.runtime.onMessage.addListener(function(msg){
 
 function nodechk(node){
 	var sty=node.getAttribute("style")
-	if(sty.indexOf(st) >-1){
+	if(sty && sty.indexOf(st) >-1){
 		sty=sty.replace(st, '')
 		node.setAttribute("style",sty)
 	}else{
