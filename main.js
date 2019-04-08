@@ -4,40 +4,24 @@ var IITarget = {},
 browser.runtime.onMessage.addListener(function(msg){
 	if (msg.cmd !== "invert") return
 
-	var node = IITarget,am=[],medimg=[],mis=[],done=false;
-	if(node.parentNode.parentNode &&
-			node.parentNode.parentNode.parentNode &&
-			node.parentNode.parentNode.parentNode.parentNode &&
-			node.parentNode.parentNode.parentNode.parentNode.parentNode){
-		for(let cl of ["_2a2q", "media-image", "_2rea", "_5rgt", "_5dec", "rn-1lgpqti, uiScaledImageContainer, tcu-imageWrapper"]){
-			medimg = node.parentNode.parentNode.getElementsByClassName(cl);
-			if(medimg.length > 0) break;
-		}
-		if(medimg.length == 0){
-			for(let cl of ["_5rgu", "_3x-2"]){
-				mis = node.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName(cl);
-				if(mis.length > 0) break;
-			}
-		}else if(node.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode &&
-				node.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode){
-				am = node.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName("AdaptiveMedia");
+	var node = IITarget, found=false, medimg=[],	pref=".";
+	const	scls=["css-1dbjc4n","rn-156q2ks","rn-16y2uox","rn-10m9thr","_26ii _-_b", "_2a2q", "media-image", "_2rea", "_5rgt", "_5dec", "uiScaledImageContainer", "tcu-imageWrapper","_5rgu", "_3x-2","AdaptiveMedia"]
+	const	sids=["AdaptiveMedia"]
+	for(let cl of scls){
+		//medimg = node.parentNode.parentNode.getElementsByClassName(cl);
+		if(sids.indexOf(cl)>-1) pref="#"
+		medimg = node.closest(pref+cl)
+		//medimg = findAncestor(node, cl);
+		if(medimg){
+			nodechk(medimg)
+			found=true
+			break
 		}
 	}
-
-	if(mis.length == 0 && medimg.length == 0 && am.length == 0){
+	if(!found){
 		nodechk(node)
 	}
-	else{
-		var done=false;
-		for(let el of [am, mis, medimg]){
-			Array.prototype.filter.call(el, ob=>{
-				nodechk(ob);
-				done=true;
-			})
-			if(done)
-					break;
-		}
-	}
+
 });
 
 function nodechk(ob){
