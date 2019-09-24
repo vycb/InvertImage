@@ -4,7 +4,7 @@
 	"name": "Invert Image",
 	"version": "2.5.2",
 
-	"description": "The addon inverts color of an image/(any block of page) to black for night reading",
+	"description": "Inverts color of an image/(any block of page) to black for night reading",
 	"homepage_url": "https://github.com/vycb/InvertImage",
 
 	"icons": {
