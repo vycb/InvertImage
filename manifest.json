@@ -1,10 +1,9 @@
 {
-
 	"manifest_version": 2,
 	"name": "Invert Image",
-	"version": "2.5.2",
+	"version": "2.6",
 
-	"description": "Inverts color of an image/(any block of page) to black for night reading",
+	"description": "Inverts color of an image/(any part of a page) to black for night time reading",
 	"homepage_url": "https://github.com/vycb/InvertImage",
 
 	"icons": {
